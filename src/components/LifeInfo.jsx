@@ -22,7 +22,12 @@ class LifeInfo extends Component {
       temperature: lifeTemperature,
       power: lifePower
     });
+
     this.interval = setInterval(() => {
+      this.fetchLifeInfo().then(data => {
+        lifeTemperature = data.temperature;
+        lifePower = data.power;
+      });
       this.setState({
         time: Date.now(),
         temperature: lifeTemperature,
