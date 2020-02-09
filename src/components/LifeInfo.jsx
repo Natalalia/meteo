@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../api";
 import { deciKelvinToCelsius, mWTokWh } from "../utils/changeUnit";
+import "./LifeInfo.css";
 
 class LifeInfo extends Component {
   state = {
@@ -38,13 +39,19 @@ class LifeInfo extends Component {
       return <span>Loading ...</span>;
     }
     return (
-      <>
+      <div id="LifeInfo">
         <span>{new Date().toLocaleTimeString("en-US", { hour12: false })}</span>
-        <h2>Temperature:</h2>
-        <span>{temperature} ºC</span>
-        <h2>Power:</h2>
-        <span>{power} kWh</span>
-      </>
+        <div className="singleInfo">
+          <div className="singleInfo">
+            <h2>Temperature:</h2>
+            <span>{temperature} ºC</span>
+          </div>
+          <div className="singleInfo">
+            <h2>Power:</h2>
+            <span>{power} kWh</span>
+          </div>
+        </div>
+      </div>
     );
   }
 }
