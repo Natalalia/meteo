@@ -1,38 +1,19 @@
 import React, { Component } from "react";
 import * as api from "../api";
+import { deciKelvinToCelsius, mWTokWh } from "../utils/changeUnit";
 
 class LifeInfo extends Component {
   state = {
     time: null,
     temperature: null,
-    power: null
+    power: null,
+    isLoading: true
   };
 
   componentDidMount() {
-    let lifeTemperature;
-    let lifePower;
-
-    this.fetchLifeInfo().then(data => {
-      lifeTemperature = data.temperature;
-      lifePower = data.power;
-    });
-
-    this.setState({
-      time: Date.now(),
-      temperature: lifeTemperature,
-      power: lifePower
-    });
-
+    this.fetchLifeInfo();
     this.interval = setInterval(() => {
-      this.fetchLifeInfo().then(data => {
-        lifeTemperature = data.temperature;
-        lifePower = data.power;
-      });
-      this.setState({
-        time: Date.now(),
-        temperature: lifeTemperature,
-        power: lifePower
-      });
+      this.fetchLifeInfo();
     }, 5000); // quizá luego debería ser el tiempo cada segundo
   }
 
@@ -41,11 +22,21 @@ class LifeInfo extends Component {
   }
 
   fetchLifeInfo = () => {
-    return api.getLifeValues().then(data => data);
+    api.getLifeValues().then(lifeValues => {
+      this.setState({
+        time: Date.now(),
+        temperature: deciKelvinToCelsius(lifeValues.temperature.value),
+        power: mWTokWh(lifeValues.power.value),
+        isLoading: false
+      });
+    });
   };
 
   render() {
-    const { temperature, power } = this.state;
+    const { temperature, power, isLoading } = this.state;
+    if (isLoading) {
+      return <span>Loading ...</span>;
+    }
     return (
       <>
         <span>{new Date().toLocaleTimeString("en-US", { hour12: false })}</span>
