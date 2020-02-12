@@ -3,5 +3,5 @@ export const deciKelvinToCelsius = temperature => {
 };
 
 export const mWTokWh = power => {
-  return power * 1000;
+  return Math.round(power * 1000);
 };
