@@ -11,6 +11,13 @@ class Graph extends Component {
 
   componentDidMount() {
     this.fetchTemperatures();
+    this.interval = setInterval(() => {
+      this.fetchTemperatures();
+    }, 5000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   fetchTemperatures = () => {
