@@ -41,7 +41,7 @@ class Graph extends Component {
       labels: times,
       datasets: [
         {
-          label: "Temperatura",
+          label: "Temperatura (ºC)",
           fill: false,
           lineTension: 0.1,
           backgroundColor: "rgba(75,192,192,0.4)",
