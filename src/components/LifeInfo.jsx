@@ -42,7 +42,7 @@ class LifeInfo extends Component {
       <div id="lifeInfo">
         <div className="lifeTime">
           <span>Última actualización:</span>
-          <span>
+          <span id="currentTime">
             {new Date().toLocaleTimeString("en-US", { hour12: false })}
           </span>
         </div>
