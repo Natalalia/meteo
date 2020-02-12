@@ -1,10 +1,37 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
+import * as api from "../api";
+import { deciKelvinToCelsius } from "../utils/changeUnit";
 
 class Graph extends Component {
+  state = {
+    times: [],
+    temperatures: []
+  };
+
+  componentDidMount() {
+    this.fetchTemperatures();
+  }
+
+  fetchTemperatures = () => {
+    api.getTemperatures().then(temperatureValues => {
+      const times = [];
+      const temperatures = [];
+      for (let i = 1; i < temperatureValues.length; i++) {
+        times.push(temperatureValues[i].time);
+        temperatures.push(deciKelvinToCelsius(temperatureValues[i].average));
+      }
+      this.setState({
+        times,
+        temperatures
+      });
+    });
+  };
+
   render() {
+    const { times, temperatures } = this.state;
     const data = {
-      labels: ["enero", "febrero", "marzo", "abril", "mayo", "junio"],
+      labels: times,
       datasets: [
         {
           label: "Temperatura",
@@ -25,7 +52,7 @@ class Graph extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [14, 15, 13, 16, 17],
+          data: temperatures,
           yAxisID: "y-axis-1"
         },
 

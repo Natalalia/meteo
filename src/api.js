@@ -18,3 +18,16 @@ export const getLifeValues = () => {
       console.log(err, "<<<err");
     });
 };
+
+export const getTemperatures = () => {
+  return axios
+    .get(`${url}/temperatures`, {
+      params: {
+        currentTime: new Date().toLocaleTimeString("en-US", { hour12: false })
+      }
+    })
+    .then(({ data: { averageValues } }) => {
+      return averageValues;
+    })
+    .catch(err => console.log(err));
+};
