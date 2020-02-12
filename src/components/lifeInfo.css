@@ -6,9 +6,9 @@
   border-width: 0.8rem;
   border-style: groove;
   padding: 1rem 0;
-  background-color: rgba(163, 163, 194, 0.5);
+  background-color: rgba(163, 163, 194, 0.2);
   position: absolute;
-  top: 6rem;
+  top: 4rem;
   right: 8rem;
 }
 
@@ -41,4 +41,8 @@
 
 #currentTime {
   width: 5rem;
+}
+
+#currentPower {
+  width: 7rem;
 }

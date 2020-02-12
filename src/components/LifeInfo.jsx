@@ -53,7 +53,7 @@ class LifeInfo extends Component {
           </div>
           <div className="singleInfo">
             <span>Potencia:</span>
-            <span>{power} kW</span>
+            <span id="currentPower">{power} kW</span>
           </div>
         </div>
       </div>
