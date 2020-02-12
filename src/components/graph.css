@@ -1,0 +1,9 @@
+#graph {
+  margin: 5rem;
+}
+
+@media (max-width: 600px) {
+  #graph {
+    margin: 0.5rem;
+  }
+}

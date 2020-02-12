@@ -1,0 +1,35 @@
+#lifeInfo {
+  display: block;
+  font-family: "Exo 2", sans-serif;
+  font-size: 1.5rem;
+  border-color: rgb(163, 163, 194);
+  border-width: 0.8rem;
+  border-style: groove;
+  padding: 1rem 0;
+  margin: 0 auto;
+  width: 50%;
+  background-color: rgba(163, 163, 194, 0.3);
+}
+
+.wrapperInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 3rem;
+}
+
+.singleInfo span {
+  display: block;
+}
+
+.lifeTime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.lifeTime span {
+  margin-left: 1rem;
+  font-size: 1.3rem;
+}

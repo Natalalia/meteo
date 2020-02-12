@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 import * as api from "../api";
+
+import "./graph.css";
+
 import { deciKelvinToCelsius } from "../utils/changeUnit";
 
 class Graph extends Component {
@@ -144,7 +147,11 @@ class Graph extends Component {
       }
     };
 
-    return <Line data={data} options={options} />;
+    return (
+      <div id="graph">
+        <Line data={data} options={options} />
+      </div>
+    );
   }
 }
 
