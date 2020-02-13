@@ -62,14 +62,6 @@ function Graph({
     datasets: []
   };
 
-  if (checkedTemperatures) {
-    data.datasets.push(datasets[0]);
-  }
-
-  if (checkedEnergies) {
-    data.datasets.push(datasets[1]);
-  }
-
   const options = {
     responsive: true,
 
@@ -99,7 +91,7 @@ function Graph({
       yAxes: [
         {
           type: "linear",
-          display: true,
+          display: false,
           position: "left",
           id: "y-axis-1",
           gridLines: {
@@ -112,11 +104,11 @@ function Graph({
         },
         {
           type: "linear",
-          display: true, //false
+          display: false,
           position: "right",
           id: "y-axis-2",
           gridLines: {
-            display: true //false
+            display: true
           },
           labels: {
             show: true
@@ -125,6 +117,16 @@ function Graph({
       ]
     }
   };
+
+  if (checkedTemperatures) {
+    data.datasets.push(datasets[0]);
+    options.scales.yAxes[0].display = true;
+  }
+
+  if (checkedEnergies) {
+    data.datasets.push(datasets[1]);
+    options.scales.yAxes[1].display = true;
+  }
 
   return (
     <div id="graph">
