@@ -4,12 +4,13 @@ import * as api from "../api";
 
 import "./graph.css";
 
-import { deciKelvinToCelsius } from "../utils/changeUnit";
+import { storeValues } from "../utils/storeValues";
 
 class Graph extends Component {
   state = {
     times: [],
-    temperatures: []
+    temperatures: [],
+    energies: []
   };
 
   componentDidMount() {
@@ -28,15 +29,14 @@ class Graph extends Component {
       api.getValues("temperatures"),
       api.getValues("power")
     ]).then(([temperatureValues, powerValues]) => {
-      const times = [];
-      const temperatures = [];
-      for (let i = 1; i < temperatureValues.length; i++) {
-        times.push(temperatureValues[i].time);
-        temperatures.push(deciKelvinToCelsius(temperatureValues[i].average));
-      }
+      const { times } = storeValues(temperatureValues);
+      const temperatures = storeValues(temperatureValues, "temperatures")
+        .valuesToRender;
+      const energies = storeValues(powerValues, "power").valuesToRender;
       this.setState({
         times,
-        temperatures
+        temperatures,
+        energies
       });
     });
   };
