@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
+import ChooseView from "./ChooseView";
 import * as api from "../api";
 
 import "./graph.css";
@@ -10,7 +11,11 @@ class Graph extends Component {
   state = {
     times: [],
     temperatures: [],
-    energies: []
+    energies: [],
+    datasets: [],
+    checkedTemperatures: true,
+    checkedEnergies: true,
+    isLoading: true
   };
 
   componentDidMount() {
@@ -33,19 +38,7 @@ class Graph extends Component {
       const temperatures = storeValues(temperatureValues, "temperatures")
         .valuesToRender;
       const energies = storeValues(powerValues, "power").valuesToRender;
-      this.setState({
-        times,
-        temperatures,
-        energies
-      });
-    });
-  };
-
-  render() {
-    const { times, temperatures, energies } = this.state;
-    const data = {
-      labels: times,
-      datasets: [
+      const datasets = [
         {
           label: "Temperatura (ºC)",
           fill: false,
@@ -68,7 +61,6 @@ class Graph extends Component {
           data: temperatures,
           yAxisID: "y-axis-1"
         },
-
         {
           label: "Energía (kWh)",
           fill: false,
@@ -91,8 +83,47 @@ class Graph extends Component {
           data: energies,
           yAxisID: "y-axis-2"
         }
-      ]
+      ];
+      this.setState({
+        times,
+        temperatures,
+        energies,
+        datasets,
+        isLoading: false
+      });
+    });
+  };
+
+  changeView = option => {
+    console.log("Hi there!", option);
+    this.setState(currentState => {
+      return { [option]: !currentState[option] };
+    });
+  };
+
+  render() {
+    const {
+      times,
+      datasets,
+      checkedTemperatures,
+      checkedEnergies,
+      isLoading
+    } = this.state;
+
+    if (isLoading) return <span>Loading...</span>;
+
+    const data = {
+      labels: times,
+      datasets: []
     };
+
+    if (checkedTemperatures) {
+      data.datasets.push(datasets[0]);
+    }
+
+    if (checkedEnergies) {
+      data.datasets.push(datasets[1]);
+    }
 
     const options = {
       responsive: true,
@@ -136,11 +167,11 @@ class Graph extends Component {
           },
           {
             type: "linear",
-            display: true,
+            display: true, //false
             position: "right",
             id: "y-axis-2",
             gridLines: {
-              display: true
+              display: true //false
             },
             labels: {
               show: true
@@ -152,6 +183,7 @@ class Graph extends Component {
 
     return (
       <div id="graph">
+        <ChooseView changeView={this.changeView} />
         <Line data={data} options={options} />
       </div>
     );
