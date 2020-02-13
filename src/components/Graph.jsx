@@ -7,9 +7,16 @@ function Graph({
   times,
   temperatures,
   energies,
+  period,
   checkedTemperatures,
   checkedEnergies
 }) {
+  let timesToDisplay = times.slice();
+
+  if (period === "30") {
+    timesToDisplay = times.slice(30);
+  }
+
   const datasets = [
     {
       label: "Temperatura (ºC)",
@@ -58,7 +65,7 @@ function Graph({
   ];
 
   const data = {
-    labels: times,
+    labels: timesToDisplay,
     datasets: []
   };
 
@@ -81,11 +88,6 @@ function Graph({
           gridLines: {
             display: true
           }
-          /*
-            labels: {
-              show: false
-            }
-            */
         }
       ],
       yAxes: [

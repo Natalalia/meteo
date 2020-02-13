@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Graph from "./Graph";
 import ChooseView from "./ChooseView";
+import SelectPeriod from "./SelectPeriod";
 
 import * as api from "../api";
 
@@ -13,6 +14,7 @@ class GraphEnvironment extends Component {
     energies: [],
     checkedTemperatures: true,
     checkedEnergies: true,
+    period: 60,
     isLoading: true
   };
 
@@ -51,6 +53,10 @@ class GraphEnvironment extends Component {
     });
   };
 
+  changePeriod = period => {
+    this.setState({ period });
+  };
+
   render() {
     const {
       times,
@@ -58,6 +64,7 @@ class GraphEnvironment extends Component {
       energies,
       checkedTemperatures,
       checkedEnergies,
+      period,
       isLoading
     } = this.state;
 
@@ -65,12 +72,14 @@ class GraphEnvironment extends Component {
     return (
       <div>
         <ChooseView changeView={this.changeView} />
+        <SelectPeriod changePeriod={this.changePeriod} />
         <Graph
           times={times}
           temperatures={temperatures}
           energies={energies}
           checkedTemperatures={checkedTemperatures}
           checkedEnergies={checkedEnergies}
+          period={period}
         />
       </div>
     );
