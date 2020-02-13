@@ -42,7 +42,7 @@ class Graph extends Component {
   };
 
   render() {
-    const { times, temperatures } = this.state;
+    const { times, temperatures, energies } = this.state;
     const data = {
       labels: times,
       datasets: [
@@ -70,7 +70,7 @@ class Graph extends Component {
         },
 
         {
-          label: "Energía",
+          label: "Energía (kWh)",
           fill: false,
           lineTension: 0.5,
           backgroundColor: "rgba(255,0,0,6)",
@@ -88,7 +88,7 @@ class Graph extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [10, 35, 53, 26, 37],
+          data: energies,
           yAxisID: "y-axis-2"
         }
       ]
