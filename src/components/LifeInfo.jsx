@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../api";
-import { deciKelvinToCelsius, mWTokWh } from "../utils/changeUnit";
+import { deciKelvinToCelsius, mWTokW } from "../utils/changeUnit";
 import "./lifeInfo.css";
 
 class LifeInfo extends Component {
@@ -27,7 +27,7 @@ class LifeInfo extends Component {
       this.setState({
         time: Date.now(),
         temperature: deciKelvinToCelsius(lifeValues.temperature.value),
-        power: mWTokWh(lifeValues.power.value),
+        power: mWTokW(lifeValues.power.value),
         isLoading: false
       });
     });

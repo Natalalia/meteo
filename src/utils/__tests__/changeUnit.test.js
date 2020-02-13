@@ -1,4 +1,4 @@
-import { deciKelvinToCelsius, mWTokWh } from "../changeUnit";
+import { deciKelvinToCelsius, mWTokW } from "../changeUnit";
 
 describe("changeKelvinToCelsius", () => {
   it("returns the temperature in Celsius when 0dK is passed", () => {
@@ -17,16 +17,16 @@ describe("changemWTokWh", () => {
   it("returns the power in kWh when 0 mW is passed", () => {
     const power = 0;
     const result = 0;
-    expect(mWTokWh(power)).toEqual(result);
+    expect(mWTokW(power)).toEqual(result);
   });
   it("returns the power in kWh when 1 is passed ", () => {
     const power = 1;
     const result = 1000;
-    expect(mWTokWh(power)).toEqual(result);
+    expect(mWTokW(power)).toEqual(result);
   });
   it("returns the power in kWh when any value is passed", () => {
     const power = 64.717;
     const result = 64717;
-    expect(mWTokWh(power)).toEqual(result);
+    expect(mWTokW(power)).toEqual(result);
   });
 });
