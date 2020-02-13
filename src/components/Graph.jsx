@@ -13,9 +13,9 @@ class Graph extends Component {
   };
 
   componentDidMount() {
-    this.fetchTemperatures();
+    this.fetchValues();
     this.interval = setInterval(() => {
-      this.fetchTemperatures();
+      this.fetchValues();
     }, 5000);
   }
 
@@ -23,8 +23,11 @@ class Graph extends Component {
     clearInterval(this.interval);
   }
 
-  fetchTemperatures = () => {
-    api.getTemperatures().then(temperatureValues => {
+  fetchValues = () => {
+    return Promise.all([
+      api.getValues("temperatures"),
+      api.getValues("power")
+    ]).then(([temperatureValues, powerValues]) => {
       const times = [];
       const temperatures = [];
       for (let i = 1; i < temperatureValues.length; i++) {
