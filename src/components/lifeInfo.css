@@ -10,7 +10,7 @@
   background-color: rgba(192, 192, 192, 0.2);
   position: absolute;
   top: 1rem;
-  right: 10rem;
+  right: 4rem;
 }
 
 .wrapperInfo {
@@ -46,4 +46,15 @@
 
 #currentPower {
   width: 7rem;
+}
+
+@media (max-width: 750px) {
+  #lifeInfo {
+    position: relative;
+    right: 0;
+    top: 0;
+  }
+  .wrapperInfo {
+    padding: 0;
+  }
 }

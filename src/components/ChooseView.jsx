@@ -3,8 +3,6 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 
-import "./chooseView.css";
-
 function ChooseView({ checkedTemperatures, checkedEnergies, changeView }) {
   const handleChange = option => {
     changeView(option);

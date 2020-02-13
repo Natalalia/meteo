@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./selectPeriod.css";
-
 function SelectPeriod({ changePeriod }) {
   const handleClick = period => {
     changePeriod(period);
