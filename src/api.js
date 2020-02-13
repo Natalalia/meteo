@@ -1,8 +1,6 @@
 import axios from "axios";
 
-//const url = "https://meteo-api.herokuapp.com/api";
-
-const url = "http://localhost:9090/api";
+const url = "https://meteo-api.herokuapp.com/api";
 
 export const getLifeValues = () => {
   return axios
