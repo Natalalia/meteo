@@ -19,9 +19,9 @@ export const getLifeValues = () => {
     });
 };
 
-export const getTemperatures = () => {
+export const getValues = info => {
   return axios
-    .get(`${url}/temperatures`, {
+    .get(`${url}/${info}`, {
       params: {
         currentTime: new Date().toLocaleTimeString("en-US", { hour12: false })
       }
