@@ -12,9 +12,13 @@ function Graph({
   checkedEnergies
 }) {
   let timesToDisplay = times.slice();
+  let temperaturesToDisplay = temperatures.slice();
+  let energiesToDisplay = energies.slice();
 
   if (period === "30") {
     timesToDisplay = times.slice(30);
+    temperaturesToDisplay = temperatures.slice(30);
+    energiesToDisplay = energies.slice(30);
   }
 
   const datasets = [
@@ -37,7 +41,7 @@ function Graph({
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: temperatures,
+      data: temperaturesToDisplay,
       yAxisID: "y-axis-1"
     },
     {
@@ -59,7 +63,7 @@ function Graph({
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: energies,
+      data: energiesToDisplay,
       yAxisID: "y-axis-2"
     }
   ];
