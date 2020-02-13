@@ -1,15 +1,16 @@
 #lifeInfo {
   display: block;
   font-family: "Exo 2", sans-serif;
+  font-weight: bold;
   font-size: 1.5rem;
-  border-color: rgb(163, 163, 194);
+  border-color: rgb(192, 192, 192);
   border-width: 0.8rem;
   border-style: groove;
   padding: 1rem 0;
-  background-color: rgba(163, 163, 194, 0.2);
+  background-color: rgba(192, 192, 192, 0.2);
   position: absolute;
-  top: 4rem;
-  right: 8rem;
+  top: 1rem;
+  right: 10rem;
 }
 
 .wrapperInfo {

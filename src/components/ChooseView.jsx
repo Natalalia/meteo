@@ -3,9 +3,11 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 
-function ChooseView({ checkedTemperatures, checkedEnergies }) {
+import "./chooseView.css";
+
+function ChooseView({ checkedTemperatures, checkedEnergies, changeView }) {
   const handleChange = option => {
-    this.props.changeView(option);
+    changeView(option);
   };
 
   return (
@@ -16,6 +18,7 @@ function ChooseView({ checkedTemperatures, checkedEnergies }) {
             checked={checkedTemperatures}
             onChange={() => handleChange("checkedTemperatures")}
             value="checkedTemperatures"
+            color="primary"
           />
         }
         label="Temperaturas"
@@ -26,7 +29,7 @@ function ChooseView({ checkedTemperatures, checkedEnergies }) {
             checked={checkedEnergies}
             onChange={() => handleChange("checkedEnergies")}
             value="checkedEnergies"
-            color="primary"
+            color="secondary"
           />
         }
         label="Energías"

@@ -1,0 +1,14 @@
+#chooseOption {
+  position: absolute;
+  left: 8rem;
+  top: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#chooseOption label {
+  color: rgb(192, 192, 192);
+  font-family: "Exo 2", sans-serif;
+  font-size: 1rem;
+}

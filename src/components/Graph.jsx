@@ -39,7 +39,7 @@ function Graph({
       pointHoverBackgroundColor: "rgba(75,192,192,1)",
       pointHoverBorderColor: "rgba(220,220,220,1)",
       pointHoverBorderWidth: 2,
-      pointRadius: 1,
+      pointRadius: 2,
       pointHitRadius: 10,
       data: temperaturesToDisplay,
       yAxisID: "y-axis-1"
@@ -59,9 +59,9 @@ function Graph({
       pointBorderWidth: 1,
       pointHoverRadius: 5,
       pointHoverBackgroundColor: "rgba(255,0,0,0.6)",
-      pointHoverBorderColor: "rgba(255,0,0,0.6)",
+      pointHoverBorderColor: "rgba(220,220,220,1)",
       pointHoverBorderWidth: 2,
-      pointRadius: 1,
+      pointRadius: 2,
       pointHitRadius: 10,
       data: energiesToDisplay,
       yAxisID: "y-axis-2"
@@ -90,7 +90,8 @@ function Graph({
         {
           display: true,
           gridLines: {
-            display: true
+            display: true,
+            color: "192, 192, 192"
           }
         }
       ],
@@ -101,7 +102,8 @@ function Graph({
           position: "left",
           id: "y-axis-1",
           gridLines: {
-            display: true
+            display: true,
+            color: "192, 192, 192"
           },
 
           labels: {
@@ -114,7 +116,8 @@ function Graph({
           position: "right",
           id: "y-axis-2",
           gridLines: {
-            display: true
+            display: true,
+            color: "192, 192, 192"
           },
           labels: {
             show: true

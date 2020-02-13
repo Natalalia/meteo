@@ -3,6 +3,8 @@ import Graph from "./Graph";
 import ChooseView from "./ChooseView";
 import SelectPeriod from "./SelectPeriod";
 
+import "./graphEnvironment.css";
+
 import * as api from "../api";
 
 import { storeValues } from "../utils/storeValues";
@@ -71,12 +73,14 @@ class GraphEnvironment extends Component {
     if (isLoading) return <span>Loading...</span>;
     return (
       <div>
-        <ChooseView
-          checkedTemperatures={checkedTemperatures}
-          checkedEnergies={checkedEnergies}
-          changeView={this.changeView}
-        />
-        <SelectPeriod changePeriod={this.changePeriod} />
+        <div id="chooseOption">
+          <ChooseView
+            checkedTemperatures={checkedTemperatures}
+            checkedEnergies={checkedEnergies}
+            changeView={this.changeView}
+          />
+          <SelectPeriod changePeriod={this.changePeriod} />
+        </div>
         <Graph
           times={times}
           temperatures={temperatures}
