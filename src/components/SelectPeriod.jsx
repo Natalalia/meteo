@@ -6,7 +6,7 @@ import React from "react";
  */
 
 function SelectPeriod({ changePeriod }) {
-  const handleClick = period => {
+  const handleChange = period => {
     changePeriod(period);
   };
 
@@ -14,7 +14,7 @@ function SelectPeriod({ changePeriod }) {
     <div id="selectPeriod">
       <label>
         Periodo de tiempo:
-        <select onClick={e => handleClick(e.target.value)}>
+        <select onChange={e => handleChange(e.target.value)}>
           <option value={60}>1 hora</option>
           <option value={30}>30 minutos</option>
         </select>
