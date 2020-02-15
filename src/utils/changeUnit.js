@@ -1,4 +1,5 @@
 export const deciKelvinToCelsius = temperature => {
+  if (temperature === null) return null;
   return parseFloat((temperature / 10 - 273).toFixed(2));
 };
 

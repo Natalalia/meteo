@@ -1,6 +1,11 @@
 import { deciKelvinToCelsius, mWTokW } from "../changeUnit";
 
 describe("changeKelvinToCelsius", () => {
+  it("returns null if null is passed in", () => {
+    const temperature = null;
+    const result = null;
+    expect(deciKelvinToCelsius(temperature)).toEqual(result);
+  });
   it("returns the temperature in Celsius when 0dK is passed", () => {
     const temperature = 0;
     const result = -273;
