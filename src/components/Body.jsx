@@ -8,8 +8,8 @@ import GraphEnvironment from "./GraphEnvironment";
 function Body() {
   return (
     <div id="body">
-      <GraphEnvironment />
       <LifeInfo />
+      <GraphEnvironment />
     </div>
   );
 }

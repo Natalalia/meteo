@@ -77,14 +77,6 @@ class GraphEnvironment extends Component {
     if (isLoading) return <span>Loading...</span>;
     return (
       <div>
-        <Graph
-          times={times}
-          temperatures={temperatures}
-          energies={energies}
-          checkedTemperatures={checkedTemperatures}
-          checkedEnergies={checkedEnergies}
-          period={period}
-        />
         <div id="chooseOption">
           <ChooseView
             checkedTemperatures={checkedTemperatures}
@@ -93,6 +85,14 @@ class GraphEnvironment extends Component {
           />
           <SelectPeriod changePeriod={this.changePeriod} />
         </div>
+        <Graph
+          times={times}
+          temperatures={temperatures}
+          energies={energies}
+          checkedTemperatures={checkedTemperatures}
+          checkedEnergies={checkedEnergies}
+          period={period}
+        />
       </div>
     );
   }

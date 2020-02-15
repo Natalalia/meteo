@@ -1,51 +1,42 @@
 #lifeInfo {
-  display: block;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   font-family: "Exo 2", sans-serif;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border-color: rgb(192, 192, 192);
-  border-width: 0.8rem;
-  border-style: groove;
-  padding: 1rem 0;
+  padding: 0rem;
   background-color: rgba(192, 192, 192, 0.2);
-  position: absolute;
-  top: 1rem;
-  right: 4rem;
-}
-
-.wrapperInfo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 3rem;
-}
-
-.singleInfo {
-  padding: 0 1rem;
+  box-sizing: border-box;
+  margin: 0 7.5rem;
 }
 
 .singleInfo span {
-  display: block;
+  margin-left: 1rem;
 }
 
 .lifeTime {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
 }
 
 .lifeTime span {
   margin-left: 1rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 #currentTime {
   width: 5rem;
 }
 
+#currentTemperature {
+  width: 5rem;
+}
+
 #currentPower {
-  width: 7rem;
+  width: 10rem;
 }
 
 @media (max-width: 750px) {
