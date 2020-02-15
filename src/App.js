@@ -4,6 +4,9 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core";
 
+/**
+ * A material-UI method to change the specified themes in their standard css
+ */
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -16,6 +19,9 @@ const theme = createMuiTheme({
   }
 });
 
+/**
+ * Represents the full application
+ */
 function App() {
   return (
     <div id="App">

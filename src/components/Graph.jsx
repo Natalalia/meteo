@@ -3,6 +3,10 @@ import { Line } from "react-chartjs-2";
 
 import "./graph.css";
 
+/**
+ * This components shows the actual graph, in the left hand side the temperature units and in the right hand side the energy units. Times will be display in the x-axis.
+ * @param {object} props - array with the different times every minute, array with the temperatures every minute, array with the energies every minute, string with the selected period of time, boolean and boolean.
+ */
 function Graph({
   times,
   temperatures,

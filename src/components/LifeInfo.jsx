@@ -3,6 +3,9 @@ import * as api from "../api";
 import { deciKelvinToCelsius, mWTokW } from "../utils/changeUnit";
 import "./lifeInfo.css";
 
+/**
+ * Represents the temperature and the power values every 5 seconds
+ */
 class LifeInfo extends Component {
   state = {
     time: null,
@@ -15,7 +18,7 @@ class LifeInfo extends Component {
     this.fetchLifeInfo();
     this.interval = setInterval(() => {
       this.fetchLifeInfo();
-    }, 5000); // quizá luego debería ser el tiempo cada segundo
+    }, 5000);
   }
 
   componentWillUnmount() {

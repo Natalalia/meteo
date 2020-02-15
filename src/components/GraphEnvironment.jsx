@@ -9,6 +9,10 @@ import * as api from "../api";
 
 import { storeValues } from "../utils/storeValues";
 
+/**
+ * Wraps the different components that display the graph and provide extra functionality on it. It is the component that fetch and stores the information to display
+ */
+
 class GraphEnvironment extends Component {
   state = {
     times: [],

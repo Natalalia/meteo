@@ -1,5 +1,10 @@
 import React from "react";
 
+/**
+ * This component shows a dropdown with two options of time and invokes the function passed in with the option that has been clicked
+ * @param {object} props - a method that determines the period of time shown is passed from props
+ */
+
 function SelectPeriod({ changePeriod }) {
   const handleClick = period => {
     changePeriod(period);

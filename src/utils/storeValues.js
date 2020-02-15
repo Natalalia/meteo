@@ -1,5 +1,10 @@
 import { deciKelvinToCelsius, mWTokW, kWTokWh } from "./changeUnit";
 
+/**
+ * This function place in an object the final values to render, after invoke the correspondent functions to change units
+ * @param {array} values - Array with the time-value pairs
+ * @param {string} type - Type of the value, either temperatures or power
+ */
 export const storeValues = (values, type) => {
   const valuesToUse = values.slice(1);
   return valuesToUse.reduce(
