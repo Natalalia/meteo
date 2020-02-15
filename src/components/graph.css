@@ -2,7 +2,7 @@
   margin: 0 5rem;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 900px) {
   #graph {
     margin: 0.5rem;
   }

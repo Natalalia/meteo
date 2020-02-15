@@ -12,10 +12,6 @@
   margin: 0 7.5rem;
 }
 
-.singleInfo span {
-  margin-left: 1rem;
-}
-
 .lifeTime {
   display: flex;
   justify-content: center;
@@ -23,29 +19,36 @@
 }
 
 .lifeTime span {
-  margin-left: 1rem;
   font-size: 1rem;
 }
 
 #currentTime {
   width: 5rem;
+  margin-left: 1rem;
 }
 
 #currentTemperature {
   width: 5rem;
+  margin-left: 1rem;
 }
 
 #currentPower {
-  width: 10rem;
+  width: 12rem;
+  margin-left: 1rem;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 900px) {
   #lifeInfo {
-    position: relative;
-    right: 0;
-    top: 0;
+    flex-direction: column;
+    margin: 0 1rem;
+    padding: 0.2rem 0;
+    border-style: groove;
   }
-  .wrapperInfo {
-    padding: 0;
+  .lifeTime {
+    padding: 0.5rem 0;
+  }
+
+  .singleInfo {
+    padding-bottom: 0.5rem;
   }
 }

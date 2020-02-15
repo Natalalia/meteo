@@ -49,11 +49,11 @@ class LifeInfo extends Component {
             {new Date().toLocaleTimeString("en-US", { hour12: false })}
           </span>
         </div>
-        <div>
+        <div className="singleInfo">
           <span>Temperatura:</span>
           <span id="currentTemperature">{temperature} ºC</span>
         </div>
-        <div>
+        <div className="singleInfo">
           <span>Potencia:</span>
           <span id="currentPower">{power} kW</span>
         </div>

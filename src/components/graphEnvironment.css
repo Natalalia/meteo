@@ -10,11 +10,8 @@
   font-size: 1rem;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 900px) {
   #chooseOption {
-    position: relative;
-    left: 0;
-    top: 0;
-    margin-left: 1rem;
+    margin: 0.5rem 0 0.5rem 1rem;
   }
 }
