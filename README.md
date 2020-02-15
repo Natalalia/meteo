@@ -10,7 +10,13 @@ The front end of this project has been built with React. You can find the deploy
 
 ## Run the app locally
 
-You can clone this repository in your terminal and play around with it using:
+You can clone this repository in your terminal and play around with it:
+
+```bash
+npm install
+```
+
+You will need to run the previous command the first time and the following one whenever you want to play with it:
 
 ```bash
 npm start
