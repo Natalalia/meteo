@@ -22,7 +22,7 @@ You will need to run the previous command the first time and the following one w
 npm start
 ```
 
-It will run the app the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+It will run the app in the development mode connected tow the deployed API. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Back-end information and API
 
