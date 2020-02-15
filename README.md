@@ -6,7 +6,7 @@ You can also decide in which information you want to focus on!
 
 ## Deployed version
 
-The front end of this project has been built with React. You can find the deployed version here:
+The front end of this project has been built with React. You can find the deployed version here: [ https://nata-meteo-site.netlify.com](https://nata-meteo-site.netlify.com)
 
 ## Run the app locally
 
