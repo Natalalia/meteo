@@ -6,7 +6,7 @@ You can also decide in which information you want to focus on!
 
 ## Deployed version
 
-The front end of this project has been built with React. You can find the deployed version here: [ https://nata-meteo-site.netlify.com](https://nata-meteo-site.netlify.com)
+The front end of this project has been built with **React**. You can find the deployed version here: [ https://nata-meteo-site.netlify.com](https://nata-meteo-site.netlify.com)
 
 ## Run the app locally
 
@@ -29,3 +29,7 @@ It will run the app in the development mode connected tow the deployed API. Open
 Link to API: [https://meteo-api.herokuapp.com/api](https://meteo-api.herokuapp.com/api)
 
 Link to the back-end repository: [https://github.com/Natalalia/Meteo-API](https://github.com/Natalalia/Meteo-API)
+
+## Running the tests
+
+I made some tests for the extra functionality required such as change of units. By running `npm test`, Jest will open in your command line.
